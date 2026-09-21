@@ -75,9 +75,11 @@ for center_x, y in horizontal_candidates:
     if ok:
         verified_candidates.append((center_x, y))
 
+print("Candidates:", len(verified_candidates))
+
 output = img.convert("RGB")
 draw = ImageDraw.Draw(output)
 for x, y in verified_candidates:
-    draw.ellipse((x - 10, y - 10, x + 10, y + 10), fill="red")  # 10pxの半径の円を描画
+    draw.ellipse((x - 20, y - 20, x + 20, y + 20), fill="red")  # 20pxの半径の円を描画
 
 output.save("qr_candidates.png")
